@@ -1,0 +1,84 @@
+<!DOCTYPE html> <!--告诉浏览器这是HTML5标准-->
+<html lang = "zh-CN" > <!--语言设置为中文-->
+<head><!--声明标题-->
+    <meta charset="UTF-8"><!--设置字符编码为UTF-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--适应不同设备屏幕-->
+    <title>我的个人主页</title><!--网页标题，显示再浏览器标签-->  
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="description" content="这是我的个人主页。包含关于我、技能与联系方式。" />
+</head>
+<body>
+    <!--页面内容部分-->
+    <header class="site-header">
+        <h1 class="title">vulgar </h1>
+        <p class="subtitle">前端 / 后端 / 全栈学习中</p>
+    </header>
+    <main class="container">
+        <section class="intor card">
+            <img src="picture.png" alt="我的照片"><!--<img>在页面中插入图片，src定义图片路径（本地or网络）alt是替代文本，图片无法加载则显示文字-->
+            <div class="intro__text">
+                <p>你好！我正在系统学习前端和后端，目标是 6 个月内具备实习能力。</p>
+        <p>我对 Web 开发、算法与工程实践感兴趣，喜欢把想法做成可用的产品。</p>
+        <p>欢迎来我的 <a href="https://github.com/你的GitHub用户名" target="_blank" rel="noopener">GitHub</a> 看项目。</p>
+            </div>
+        </section>
+
+        <section class="colimns">
+            <section class="card about">
+                <h2>关于我</h2>
+                <p>目前在学：HTML、CSS、JavaScript、Git/GitHub。</p>
+                <p>正在推进的小目标：完成个人主页、搭一个全栈小项目。</p>
+                <table class="info-table">
+                    <tbody>
+                        <tr><th>学校</th><td>muc</td></tr>
+                        <tr><th>方向</th><td>前端 / 后端 / 全栈</td></tr>
+                        <tr><th>爱好</th><td>阅读、运动、做小工具</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <aside class="card contacts">
+                <h2>联系方式 & 技能</h2>
+                <ul class="contact-list">
+                    <li><a href="mailto:your-email@example.com">your-email@example.com</a></li>
+                    <li><a href="https://github.com/vulgar26" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+                <h3>技能</h3>
+                <ul class="skill-list">
+                    <li>HTML / CSS 基础</li>
+                    <li>JavaScript 入门</li>
+                    <li>Git 基本操作</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="card">
+            <h2>给我留言</h2>
+            <from class="message-form">
+                <label>
+                    你的名字
+                    <input type="text" name="name" placeholder="请输入名字" required />
+                </label>
+                <label>
+                    留言
+                    <textarea name="message" rows="4" placeholder="想说的话..." required></textarea>
+                </label>
+                <button type="submit">f发送</button>
+            </from>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>© <span id="year"></span> 你的名字. All rights reserved.</small>
+    </footer>   
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.querySelector('.message-form')?.addEventListener('submit',(e) =>{
+            e.preventDefault();
+            alert('感谢留言！(静态示例，未链接后端)');
+            document.querySelector('.message-form').reset();  // 清空表单
+        });
+    </script>
+    </body>
+</html>
