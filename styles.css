@@ -8,7 +8,10 @@
 }
 
 *{box-sizing: border-box}
-html,body{margin: 0;padding: 0;}
+html,body{
+  margin: 0;
+  padding: 0;
+}
 body{
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC","Microsoft YaHei", sans-serif;
     background: var(--bg);
@@ -16,8 +19,13 @@ body{
     line-height:1.6;
 }
 
-a{color:var(--accent); text-decoration:none;}
-a:hover{text-decoration: underline;}
+a{
+  color:var(--accent); 
+  text-decoration:none;
+}
+a:hover{
+  text-decoration: underline;
+}
 
 .container{
     width:min(100%, 1000px);
@@ -70,18 +78,47 @@ a:hover{text-decoration: underline;}
 }
 
 .message-form{
-  display:flex; flex-direction:column; gap:12px;
+  display:flex; 
+  flex-direction:column; 
+  gap:12px;
 }
-.message-form input, .message-form textarea{
-  width:100%; padding:10px 12px; border-radius:10px;
-  border:1px solid var(--border); background:#d4dcff; color:var(--text);
+.message-form input, 
+.message-form textarea{
+  width:100%; 
+  padding:10px 12px; 
+  border-radius:10px;
+  border:1px solid var(--border); 
+  background:#d4dcff; 
+  color:var(--text);
+  transition: all 0.3 ease;
+}
+.message-form input:focus,
+.message-form textarea:focus {
+  border-color: var(--accent);
+  background: #223065;
+  outline: none;
+  box-shadow: 0 0 8px var(--accent);
 }
 .message-form button{
   align-self:flex-start;
-  padding:10px 16px; border-radius:10px; border:1px solid var(--border);
-  background: #4d70fb; color:var(--text); cursor:pointer;
+  padding:10px 16px;
+  border-radius:10px; 
+  border:1px solid var(--border);
+  background: #4d70fb; 
+  color:var(--text); 
+  cursor:pointer;
+  transition: all 0.3s ease;
 }
-.message-form button:hover{background:#223065}
+.message-form button:hover{
+  background:#223065;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.message-form button:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
 
 @media (max-width: 768px){
   .intro{flex-direction:column; align-items:center; text-align: center;}
