@@ -63,16 +63,23 @@
                     留言
                     <textarea name="message" rows="4" placeholder="想说的话..." required></textarea>
                 </label>
-                <button type="submit">f发送</button>
+                <button type="submit">发送</button>
             </from>
         </section>
+
+        <section class="card">
+            <button id="quote-btn">我喜欢的名言</button>
+            <p id="quote-display">名言：</p>
+        </section>
+
         <section>
-            <h2>使用GET方法设置一个假的action URL</h2>
-            <form action="https://httpbin.org/get" method="get">
-                <label for="name">姓名：</label>
-                <input type="text" name="name" id="name" required>
-                <button type="submit">提交</button>
-            </form>
+            <label for="char-count-input">输入文本：</label>
+            <input type="text" id="char-count-input" placeholder="开始输入...">
+            <p id="char-count">字符数：0</p>
+        </section>
+
+        <section>
+            <button id="theme-toggle-btn">切换主题</button>
         </section>
     </main>
 
@@ -80,28 +87,6 @@
         <small>© <span id="year"></span> 你的名字. All rights reserved.</small>
     </footer>   
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-        document.querySelector('.message-form')?.addEventListener('submit',(e) =>{
-            e.preventDefault();
-            alert('感谢留言！(静态示例，未链接后端)');
-            document.querySelector('.message-form').reset();  // 清空表单
-        });
-        document.querySelector('#toggleButton')?.addEventListener('click', () => {
-            let textElement = document.querySelector('toggleText');
-            if (textElement.style.display == 'none') {
-                textElement.style.display = 'block';
-            }else {
-                textElement.style.display = 'none';
-            }
-        })
-        document.querySelector('#myInput')?.addEventListener('focus', (e) => {
-        e.target.style.backgroundColor = 'lightblue';
-    });
-
-    document.querySelector('#myInput')?.addEventListener('blur', (e) => {
-        e.target.style.backgroundColor = '';
-    });
-    </script>
+    <script src="script.js"></script>
     </body>
 </html>
