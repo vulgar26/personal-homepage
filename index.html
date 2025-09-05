@@ -87,6 +87,21 @@
             alert('感谢留言！(静态示例，未链接后端)');
             document.querySelector('.message-form').reset();  // 清空表单
         });
+        document.querySelector('#toggleButton')?.addEventListener('click', () => {
+            let textElement = document.querySelector('toggleText');
+            if (textElement.style.display == 'none') {
+                textElement.style.display = 'block';
+            }else {
+                textElement.style.display = 'none';
+            }
+        })
+        document.querySelector('#myInput')?.addEventListener('focus', (e) => {
+        e.target.style.backgroundColor = 'lightblue';
+    });
+
+    document.querySelector('#myInput')?.addEventListener('blur', (e) => {
+        e.target.style.backgroundColor = '';
+    });
     </script>
     </body>
 </html>
