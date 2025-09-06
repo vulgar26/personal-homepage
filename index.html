@@ -19,7 +19,7 @@
             <div class="intro__text">
                 <p>你好！我正在系统学习前端和后端，目标是 6 个月内具备实习能力。</p>
         <p>我对 Web 开发、算法与工程实践感兴趣，喜欢把想法做成可用的产品。</p>
-        <p>欢迎来我的 <a href="https://github.com/你的GitHub用户名" target="_blank" rel="noopener">GitHub</a> 看项目。</p>
+        <p>欢迎来我的 <a href="https://github.com/vulgar26" target="_blank" rel="noopener">GitHub</a> 看项目。</p>
             </div>
         </section>
 
@@ -53,8 +53,11 @@
         </section>
 
         <section class="card">
-            <h2>给我留言</h2>
-            <from class="message-form">
+            <h2>留言板</h2>
+            <ul id="message-list">
+
+            </ul>
+            <form class="message-form">
                 <label>
                     你的名字
                     <input type="text" name="name" placeholder="请输入名字" required />
@@ -63,8 +66,9 @@
                     留言
                     <textarea name="message" rows="4" placeholder="想说的话..." required></textarea>
                 </label>
-                <button type="submit">发送</button>
-            </from>
+                <button type="submit">提交留言</button>
+                <button type="button" id="delete-last-message">删除最后一条留言</button>
+            </form>
         </section>
 
         <section class="card">
@@ -81,6 +85,13 @@
         <section>
             <button id="theme-toggle-btn">切换主题</button>
         </section>
+
+        <section class="card">
+            <h2>实时搜索</h2>
+            <input type="text" id="search-input" placeholder="输入搜索内容..." />
+            <p id="search-result">请输入查询内容。</p>
+        </section>
+
     </main>
 
     <footer class="site-footer">
