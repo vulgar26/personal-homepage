@@ -9,21 +9,27 @@
 </head>
 <body>
     <!--页面内容部分-->
+    <button id="theme-toggle" class="theme-toggle">🌓</button>
+
     <header class="site-header">
-        <h1 class="title">vulgar </h1>
+        <h1 class="title">vulgar</h1>
         <p class="subtitle">前端 / 后端 / 全栈学习中</p>
     </header>
+
     <main class="container">
-        <section class="intor card">
-            <img src="picture.png" alt="我的照片"><!--<img>在页面中插入图片，src定义图片路径（本地or网络）alt是替代文本，图片无法加载则显示文字-->
+        <section class="intro card">
+            <div class="avatar">
+                <img src="picture.png" alt="我的照片" onerror="this.style.display='none'; this.parentNode.innerHTML='👤';">
+            </div>
+            <!--<img>在页面中插入图片，src定义图片路径（本地or网络）alt是替代文本，图片无法加载则显示文字-->
             <div class="intro__text">
                 <p>你好！我正在系统学习前端和后端，目标是 6 个月内具备实习能力。</p>
-        <p>我对 Web 开发、算法与工程实践感兴趣，喜欢把想法做成可用的产品。</p>
-        <p>欢迎来我的 <a href="https://github.com/vulgar26" target="_blank" rel="noopener">GitHub</a> 看项目。</p>
+                <p>我对 Web 开发、算法与工程实践感兴趣，喜欢把想法做成可用的产品。</p>
+                <p>欢迎来我的 <a href="https://github.com/vulgar26" target="_blank" rel="noopener">GitHub</a> 看项目。</p>
             </div>
         </section>
 
-        <section class="colimns">
+        <section class="columns">
             <section class="card about">
                 <h2>关于我</h2>
                 <p>目前在学：HTML、CSS、JavaScript、Git/GitHub。</p>
@@ -53,11 +59,9 @@
         </section>
 
         <section class="card">
-            <h2>留言板</h2>
-            <ul id="message-list">
-
-            </ul>
-            <form class="message-form">
+            <h2>💬 留言板</h2>
+            <ul id="message-list"></ul>
+            <form class="message-form" id="message-form">
                 <label>
                     你的名字
                     <input type="text" name="name" placeholder="请输入名字" required />
@@ -66,36 +70,43 @@
                     留言
                     <textarea name="message" rows="4" placeholder="想说的话..." required></textarea>
                 </label>
-                <button type="submit">提交留言</button>
-                <button type="button" id="delete-last-message">删除最后一条留言</button>
+                <div class="btn-group">
+                    <button type="submit" class="btn">提交留言</button>
+                    <button type="button" id="delete-last-message" class="btn">删除最后一条留言</button>
+                </div>
             </form>
         </section>
 
-        <section class="card">
-            <button id="quote-btn">我喜欢的名言</button>
-            <p id="quote-display">名言：</p>
+        <section class="card quote-section">
+            <h2>📝我喜欢的名言</h2>
+            <div class="btn-group">
+                <button id="quote-btn" class="btn">切换名言</button>
+                <button id="add-div-btn" class="btn">添加新的名言</button>
+                <button id="remove-div-btn" class="btn">删除最后一个</button>
+                <button id="replace-div-btn" class="btn">替换第一个</button>
+            </div>
+            <p id="quote-display" class="quote-display"></p>
+            <div id="container"></div>
         </section>
 
-        <section>
+        <section class="card">
+            <h2>📊 字符计数器</h2>
             <label for="char-count-input">输入文本：</label>
             <input type="text" id="char-count-input" placeholder="开始输入...">
-            <p id="char-count">字符数：0</p>
+            <p id="char-count" class="char-count">字符数：0</p>
         </section>
 
-        <section>
-            <button id="theme-toggle-btn">切换主题</button>
-        </section>
-
-        <section class="card">
-            <h2>实时搜索</h2>
-            <input type="text" id="search-input" placeholder="输入搜索内容..." />
-            <p id="search-result">请输入查询内容。</p>
-        </section>
-
+        <section class="'card">
+            <h2>🔍 实时搜索</h2>
+            <div class="search-section">
+                <input type="text" id="search-input" class="search-input" placeholder="输入搜索内容..." />
+                <div id="search-result" class="search-result">请输入查询内容。</div>
+            </div>
+        </section> 
     </main>
 
     <footer class="site-footer">
-        <small>© <span id="year"></span> 你的名字. All rights reserved.</small>
+        <small>© <span id="year"></span> vulagr. All rights reserved.</small>
     </footer>   
 
     <script src="script.js"></script>
